@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Demographics</title>
+    <title>Red-Black Tree</title>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="js/d3.js"></script>
     <link rel="stylesheet" href="css/skeleton.css" />
@@ -157,6 +157,8 @@
                 Second, if Q is empty, and I is P's left child. We need right rotation once so that it can be balanced. Then recolor P and G.
                 <br><br>
                 Third, if Q is empty, and I is P's right child. In order to make tree balance, we first need to do left rotation. Then it is as same as the case 2. Do right rotation and then recolor I and G.
+                <br><br>
+                G is grandparent, P is parent, I is insertion (node).
             </p>
             <div class="text lefted right-half" style="right: 5vw; z-index: auto;">
                 <h3 ><button autofocus onclick="myFunction11() ">Case 1</button>  Q is a red leaf</h3>
@@ -180,6 +182,8 @@
                 <br><br>
                 Third, Q is black node & I is P's right child.
                 First do left rotation, then it is same as Case 2. Do right rotaion and then recolor I and G.
+                <br><br>
+                G is grandparent, P is parent, I is insertion (node).
             </p>
             <div class="text lefted right-half" style="right: 5vw; z-index: auto;">
                 <h3 ><button autofocus onclick="myFunction14() ">Case 1</button>  Q is a red node</h3>
