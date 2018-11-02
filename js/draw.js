@@ -19,51 +19,51 @@ var treeNode_2;
 
 function draw_init(){
 tree = new RedBlackTree("#chart1", "60%", "200px", 3);
-tree = new RedBlackTree("#chart2", "60%", "300px", 3);
+tree = new RedBlackTree("#chart2", "60%", "400px", 2);
 }
 function myFunction1(){
   $("#chart1").empty();
-  tree = new RedBlackTree("#chart1", "60%", "200px", 3, "Wrong, have green node");
+  tree = new RedBlackTree("#chart1", "60%", "250px", 3, "Wrong, have green node");
   tree.plot_chart1();
 }
 function myFunction2(){
   $("#chart1").empty();
-  tree = new RedBlackTree("#chart1", "60%", "200px", 3, "Wrong, root need to be black");
+  tree = new RedBlackTree("#chart1", "60%", "250px", 3, "Wrong, root need to be black");
   tree.plot_chart2();
 }
 function myFunction3(){
   $("#chart1").empty();
-  tree = new RedBlackTree("#chart1", "60%", "200px", 3, "Wrong, red node can't have red children");
+  tree = new RedBlackTree("#chart1", "60%", "250px", 3, "Wrong, red node can't have red children");
   tree.plot_chart3();
 }
 function myFunction4(){
   $("#chart1").empty();
-  tree = new RedBlackTree("#chart1", "60%", "200px", 3, "Wrong, different black-node for 2's path");
+  tree = new RedBlackTree("#chart1", "60%", "250px", 3, "Wrong, different black-node for 2's path");
   tree.plot_chart4();
 }
 function myFunction5(){
   $("#chart2").empty();
-  tree = new RedBlackTree("#chart2", "60%", "300px", 3);
+  tree = new RedBlackTree("#chart2", "60%", "400px", 2);
   tree.plot_chart5();
 }
 function myFunction6(){
   $("#chart3").empty();
-  tree = new RedBlackTree("#chart3", "80%", "190px", 2, "Wrong, break path rule");
+  tree = new RedBlackTree("#chart3", "80%", "250px", 2, "Wrong, break path rule");
   tree.plot_chart6();
 }
 function myFunction7(){
   $("#chart4").empty();
-  tree = new RedBlackTree("#chart4", "80%", "170px", 2, "Right, pass every test");
+  tree = new RedBlackTree("#chart4", "80%", "250px", 2, "Right, pass every test");
   tree.plot_chart7();
 }
 function myFunction8(){
   $("#chart5").empty();
-  tree = new RedBlackTree("#chart5", "80%", "170px", 2, "Wrong, break red rule");
+  tree = new RedBlackTree("#chart5", "80%", "230px", 2, "Wrong, break red rule");
   tree.plot_chart8();
 }
 function myFunction9(){
   $("recolor").empty();
-  treeRecolar = new RedBlackTree("recolor", "100%", "300px", 2);
+  treeRecolar = new RedBlackTree("recolor", "100%", "330px", 2);
   treeRecolar.reset();
   treeRecolar.plot_recolor();
 }
@@ -87,7 +87,7 @@ function myFunction12(){
 }
 function myFunction13(){
   $("leaf_case").empty();
-  treeLeaf_2 = new RedBlackTree("leaf_case", "100%", "300px", 2);
+  treeLeaf_2 = new RedBlackTree("leaf_case", "100%", "330px", 2);
   treeLeaf_2.reset();
   treeLeaf_2.leafAnimation_2();
 }

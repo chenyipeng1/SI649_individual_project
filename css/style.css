@@ -68,14 +68,18 @@ h3{
 }
 
 .left-half{
-    position: absolute;
+    /* position: absolute;
     width : 50%;
-    left: 19vw;
+    left: 19vw; */
+    float: left;
+    width: 50%;
+    margin-left: 20vw;
 }
 .right-half{
-    position: absolute;
+    /* position: absolute;
     width: 50%;
-    z-index:-1;
+    z-index:-1; */
+    margin-left: 45vw;
 }
 
 
