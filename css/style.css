@@ -1,0 +1,139 @@
+body {
+    font-family: 'Inconsolata', Monaco, "Lucida Console", Consolas, "Courier New";
+
+    /*    background: #58585B;*/
+}
+h1 {
+    font-family: 'Inconsolata', Monaco, "Lucida Console", Consolas, "Courier New";
+    font-size: 40px;
+    font-style: normal;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+}
+
+h3{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: black;
+}
+
+.info{
+    text-transform: uppercase;
+    font-size: 1.5fem;
+    padding: 0px 0px;
+    /* height: -2em;
+    width: 8.8em; */
+    /* text-align: right; */
+    margin: -25px 0 0px 0;
+    font-style: normal;
+    margin-bottom:5pt;
+}
+
+.text {
+    font-family: "Mercury SSm A", "Mercury SSm B";
+    color: gray;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.4em;
+    margin: 0 auto;
+    width: 60vw;
+}
+
+
+
+.highlight{
+    color: red; 
+}
+
+.centered{
+    text-align:center;
+}
+.lefted{
+    text-align: left;
+}
+
+#chart1 {
+    border: solid 0px;
+    width: 75%;
+    text-align:center;
+    margin-left:15vw;
+    margin-top: 17vh;
+}
+
+.left-half{
+    position: absolute;
+    width : 50%;
+    left: 19vw;
+}
+.right-half{
+    position: absolute;
+    width: 50%;
+    z-index:-1;
+}
+
+
+
+
+
+
+
+
+.button {
+    width: 90px;
+    padding: 5px 5px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    text-align: center;
+    font-size: .9em;
+    border: 1px solid #e0e0e0;
+    float: left;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.button:hover {
+    background: #e0e0e0;
+}
+
+.button.current {
+    background: #000;
+    color: #fff;
+}
+
+#n {
+    font-size: 3.0em;
+}
+
+.chartholder{
+    width: 10%;
+    margin-right: 10%;
+    margin-left: 10%;
+    float:left;
+    text-align:center;
+    padding-bottom:60px;
+}
+
+.chartholder h6 {
+    font-family: Consolas;
+    text-transform: uppercase;
+    font-weight:bold;
+}
+
+.toolTip {
+    position: absolute;
+    display: none;
+    min-width: 80px;
+    height: auto;
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #069ea8;
+    padding: 14px;
+    text-align: center;
+}

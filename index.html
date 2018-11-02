@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demographics</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/d3.js"></script>
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/draw.js"></script>    
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/node.js"></script>
+    <script src="js/tree.js"></script>
+    <script src="js/redblacktree.js"></script>
+
+</head>
+<body >
+
+    <div class="container">
+        <!-- title -->
+        <div class="row centered">
+                <h1>Red-Black Tree</h1>
+                <h3 class="info">Yipeng, Chen </br>2018/11/2</h3>
+        </div>
+        <!-- outline -->
+        <div class="text lefted">
+            <h2>Outline</h2>
+            <ul>
+                <h3><li>Red-Black Trees: Basics</li>
+                <li>Red-Black Trees: Insertion</li>
+                <li>Red-Black Trees: Short Quiz</li></h3>
+            </ul>
+        </div>
+        <!-- Introduction -->
+        <p class="text lefted">This website is mainly for you to understand data structure: Red-black Trees.
+            In the first part, we will focus on the basic rules of Red-black Tree, so that you can know what is correct Tree.
+            In the second part, we will focus on the INSERT Operation and give animation of how the change goes.
+            Finally, let us have a short quiz to make sure the basic of Red-black Tree.
+        </p>
+        <!-- Property -->
+        <div class="row centered left-half" style="margin-top:2em">
+            <div class="text lefted">
+                <h2>Property</h2>
+                <h3 style="margin-top:-1em">(click buttons to show)</h3>
+            </div>
+            <!-- Color Rule -->
+            <div class="text lefted">
+                    <h3><button autofocus onclick="myFunction1() ">Color Rule</button></h3>
+            </div>
+            <p class="text lefted" style="margin-top:-1em">Every node is either <span class="highlight">red </span> or <span class="highlight">black </span></p>
+            <!-- Root Rule -->
+            <div class="text lefted" style="margin-top:2em">
+                <h3><button autofocus onclick="myFunction2() ">Root Rule</button></h3>
+            </div>
+            <p class="text lefted" style="margin-top:-1em">The root is <span class="highlight">black</span> ></p>
+            <!-- Red Rule -->
+            <div class="text lefted" style="margin-top:2em">
+                    <h3><button autofocus onclick="myFunction3() ">Red Rule</button></h3>
+            </div>
+            <p class="text lefted" style="margin-top:-1em">Red node can <span class="highlight">only have </span> black children</p>
+            <!-- Path Rule -->
+            <div class="text lefted" style="margin-top:2em">
+                    <h3><button autofocus onclick="myFunction4() ">Path Rule</button></h3>
+            </div>
+            <p class="text lefted" style="margin-top:-1em"><span class="highlight">Every </span> path from a node x to NULL must have the
+                <span class="highlight"> same number </span> of black nodes (including x it self).</p>       
+        </div>
+        <div id="chart1" class="right-half"></div>
+        
+        <div class="text lefted" style="margin-top:35em">
+            <h2>Binary Search Tree</h2>
+            <p class="text lefted"> Note that Black-Red Tree is one type of <a href="https://en.wikipedia.org/wiki/Binary_search_tree">Binary Search Tree(BST)</a>. General saying, it follows two rules.</br></br>
+        
+                First, assume all keys are <span class="highlight"> distinct</span>.</br>
+                    
+                Second, the key of any node is <span class="highlight">greater </span>than the keys of all nodes in its <span class="highlight">left subtree</span>, and <span class="highlight">smaller</span> than the keys of all nodes in its <span class="highlight">right subtree</span>.</br></br>
+
+                <span style="font-weight: bold">Now, think of a Red-Black Tree with following node: [1, 3, 4, 5, 8, 6 ,9], can you draw the Red-Black Tree with root "3"? There may be lot's of implemetations, but what if we want the tree to be balanced, which means for this example, tree height is exactly 3? You can click the button to show the Red-Black Tree with height 3.</span>
+            </p>
+        </div>
+        
+
+        <!-- right example -->
+        <div class="row centered" style="margin-top:2em">
+            <div class="text lefted">
+                    <h3><button autofocus onclick="myFunction5() ">True Example</button></h3>
+            </div>     
+    
+            <div id="chart2"></div>   
+        </div>          
+        <!-- Insertion -->
+        <div class="row centered" style="margin-top:2em">
+            <div class="text lefted">
+                <h2 >Red-black Tree Insertion</h2>
+            </div>
+            <p class="text lefted left-half" style="width:20%">
+                All query operations (e.g., search, min, max, find successor, predecessor) work just like those on general BST, they run in <span class="highlight">O(log n)</span> time on a red-black trees with n nodes in the worst case. <br><br>
+                However, any modifying operations need to follow Red-black Tree’s rule, so that it is not as similar as other BST operation.
+                <br><br>
+                “Insertion” and “Removal” are complex. Here we just talk about the <span class="highlight">Insertion operation</span>.
+                <br><br>
+
+                Let's look at three right graghs which may give your a sense why insertion is difficult. 
+                <br>
+                New node is always a leaf. However, it can't be black (shown in graph 1), since it violates path rule. Therefore, the new leaf must be <span class="highlight">red</span> (shown in graph 2).
+                <br>
+                For every insertion red leaf: if parent is black, it's ok. But if parent is red, it violate the red rule (showen in graph 3).
+                <br><br>
+                So... Some wrok must be done so that Red-Black Tree is ture.
+            </p>
+            <div class="right-half" style="right: 15vw">
+                <div id="chart3"></div>
+                <div id="chart4" style="margin-top:1em"></div>
+                <div id="chart5" style="margin-top:1em"></div>
+            </div>
+        </div>
+
+        <div class="row centered" style="margin-top:45em">
+            <div class="text lefted">
+                <h2 >Modification</h2>
+            </div>
+            <p class="text lefted left-half" style="width:20%">
+                There are mainly two types of modification that is frequently used.
+                <br><br>
+                First, let's talk about Recolor. Since sometimes the insertion of leaf will violate the red rule. One way to solve this is to change the color along the path. If there is no "g" in the right, then just change "f" and "h" color will be ok. But if g's here, things would be difficult since c must have two paths with same black node number. In this case, we have to change c's color to red. You can click "Recolor" button to see the change.
+                <br><br>
+                Second, let's talk about Rotate. If one tree path contains too many nodes, it's operation time will be very long. This is called "unbalanced tree". In order to modify that, we maintain the tree as "balanced tree". Red-Black Tree must to be balanced. To judge whether the tree is "balanced" is that for every subtree(recursive), the height of left and right subtrees differ by at most 1. The OPERATION is to interchange the role of a parent and one of its childen, while still preserving the BST ordering on the keys. Right Rotation is the right link of the left child becomes the left link of the parent. And, Parent becomes right child of the old left child.
+            </p>
+            <div class="text lefted right-half" style="right: 5vw; z-index: auto;">
+                <h3 style="display:inline"><button autofocus onclick="myFunction9() ">Recolor</button></h3>
+                <recolor></recolor>
+                <h3 ><button autofocus onclick="myFunction10() ">Rotate</button></h3>
+                <rotate></rotate>
+            </div>
+        </div>
+
+
+        <div class="row centered" style="margin-top:50em">
+            <div class="text lefted">
+                <h2 >Violate at leaf</h2>
+            </div>
+            <p class="text lefted left-half" style="width:20%">
+                There are three cases for violation at leaf.
+                <br>
+                First, if Q is red leaf, then P must be red, so just change P and Q to black. Then everything's done.
+                <br><br>
+                Second, if Q is empty, and I is P's left child. We need right rotation once so that it can be balanced. Then recolor P and G.
+                <br><br>
+                Third, if Q is empty, and I is P's right child. In order to make tree balance, we first need to do left rotation. Then it is as same as the case 2. Do right rotation and then recolor I and G.
+            </p>
+            <div class="text lefted right-half" style="right: 5vw; z-index: auto;">
+                <h3 ><button autofocus onclick="myFunction11() ">Case 1</button>  Q is a red leaf</h3>
+                <h3 ><button autofocus onclick="myFunction12() ">Case 2</button>  Q is empty & I is P's left child</h3>
+                <h3 ><button autofocus onclick="myFunction13() ">Case 3</button>  Q is empty & I is P's right child</h3>
+                <leaf_case style="margin-left: -10vw;"></leaf_case>
+            </div>
+        </div>
+
+
+        <div class="row centered" style="margin-top:33em">
+            <div class="text lefted">
+                <h2 >Violate at node</h2>
+            </div>
+            <p class="text lefted left-half" style="width:20%">
+                There are three cases for violation at node. It is because of the changes to solve leaf violation.
+                <br><br>
+                First, if Q is a red node, change G to red, and change P and Q to black. G is red at this point, and since G is red, it may violate upper level tree structure. In order to solve this, the solution may recurse. For this graph, we regard it as root, so recolor to black.
+                <br><br>
+                Second, Q is black node & I is P's left child. First do right rotation then recolor P to black as root and G to red. Violation fixed.
+                <br><br>
+                Third, Q is black node & I is P's right child.
+                First do left rotation, then it is same as Case 2. Do right rotaion and then recolor I and G.
+            </p>
+            <div class="text lefted right-half" style="right: 5vw; z-index: auto;">
+                <h3 ><button autofocus onclick="myFunction14() ">Case 1</button>  Q is a red node</h3>
+                <h3 ><button autofocus onclick="myFunction15() ">Case 2</button>  Q is black node & I is P's left child</h3>
+                <h3 ><button autofocus onclick="myFunction16() ">Case 3</button>  Q is black node & I is P's right child</h3>
+                <inner_case style="margin-left: -5vw;"></inner_case>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+
+</html>
